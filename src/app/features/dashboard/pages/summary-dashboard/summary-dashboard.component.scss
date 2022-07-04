@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+// Dashboard
+.cards-wrapper {
+  display: flex; 
+}
+
+.card {
+  flex: 1;
+  height: 300px;
+}
+
+.card--content {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin: auto;
+  }
+}
+
+.link {
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+// Graph
+.graph {
+  background-color: #f6f6f6;
+  border-radius: 4px;
+  height: 275px;
+  width: 100%;
+}

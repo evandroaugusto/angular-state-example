@@ -1,0 +1,36 @@
+<div *ngIf="userDetail$|async as user; else loading" class="user-detail-page">
+  <h1 class="title">
+    {{user.name?.firstname }} {{user.name?.lastname }}
+  </h1>
+  
+  {{user.email}} <br />
+  {{user.phone}}
+
+  <p>Fusce tincidunt, turpis a dictum hendrerit, ex turpis vehicula sem, ut ultrices 
+  justo arcu quis augue. Suspendisse condimentum, metus non molestie accumsan, 
+  tortor libero finibus sapien, at elementum metus lorem vel felis. 
+  Maecenas tempor pharetra elit quis commodo. Lorem ipsum dolor sit amet, 
+  consectetur adipiscing elit. Ut fringilla fermentum egestas.</p>
+  
+  <p>In eget pretium tortor. 
+  Interdum et malesuada fames ac ante ipsum primis in faucibus. In laoreet mattis tempor. 
+  Donec justo augue, placerat tempor bibendum non, vulputate quis sem. 
+  Nunc blandit elementum nisl eu congue. Cras vel dui eros.</p>
+
+  <p>Aliquam molestie lectus eget erat mattis, sit amet fringilla massa vehicula. 
+  Quisque ultricies tortor neque, vitae sollicitudin nibh posuere et. 
+  Nunc nibh sem, rhoncus pulvinar nunc tempus, vestibulum dictum orci. 
+  Sed mollis malesuada nunc eget sagittis. Phasellus vel viverra urna, a venenatis lacus. 
+  Suspendisse non mi eu quam rutrum pellentesque.</p>
+
+  <p>Vivamus ultrices, nisl eget congue elementum, odio tellus molestie magna, 
+  sed imperdiet elit turpis quis massa. Nam tincidunt, felis eget pellentesque rhoncus, 
+  risus nisi dignissim magna, vitae pellentesque quam felis eu tellus. 
+  Suspendisse potenti.</p>
+  
+  <a routerLink="/usuarios/consultar">Voltar</a>
+</div>
+
+<ng-template #loading>
+  Carregando...
+</ng-template>

@@ -1,0 +1,9 @@
+<ng-container *ngIf="products">
+  <div *ngIf="products.length == 1" id="products-selected">
+    {{products?.length}} produtos selecionado
+  </div>
+
+  <div *ngIf="products.length > 1" id="products-selected">
+    {{products?.length}} produtos selecionados
+  </div>
+</ng-container>
