@@ -1,0 +1,39 @@
+<div class="dashboard-content">
+  <!-- GRAPH -->
+  <app-board-card class="cards-wrapper graph-main">
+    <div class="graph card--content">
+      <h2>GRÁFICO</h2>
+    </div>
+  </app-board-card>
+  <!-- /GRAPH -->
+
+  <!-- CARDS -->
+  <div class="cards-wrapper">
+    <app-board-card *ngFor="let mfe of mfes" class="card card--content">
+      <div class="content">
+        <h2>{{mfe.module}}</h2>
+        <br />
+        <div *ngFor="let link of mfe.routes">
+          <div class="link" [routerLink]="'/'+link.path">- {{link.title}}</div>
+        </div>
+      </div>
+    </app-board-card>
+  </div>
+  <!-- CARDS -->
+
+  <div class="cards-wrapper highlight-cards">
+    <app-board-card class="card card--content">
+      <h2>HIGHLIGHT 1</h2>
+    </app-board-card>
+
+    <app-board-card class="card card--content">
+      <h2>HIGHLIGHT 2</h2>
+    </app-board-card>
+  </div>
+</div>
+
+<ng-template #emptyResult>
+  <div>
+    <h3>Sem resultados no momento</h3>
+  </div>
+</ng-template>

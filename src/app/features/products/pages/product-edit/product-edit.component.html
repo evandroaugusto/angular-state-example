@@ -1,0 +1,9 @@
+<h1>Editar produto</h1>
+
+<div *ngIf="product$ | async as product; else loading">
+  <app-product-form [form]="editForm" [product]="product">
+    (formSent)="saveProduct"
+  </app-product-form>
+</div>
+
+<ng-template #loading> Carregando... </ng-template>
