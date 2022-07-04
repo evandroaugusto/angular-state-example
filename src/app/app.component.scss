@@ -1,0 +1,20 @@
+#app {
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+}
+
+main {
+  box-sizing:border-box;
+  border-radius: 4px;
+  margin: 26px 0;
+  flex: 1;
+  min-height: 600px;
+  padding: 30px;
+}
+
+.main-content {
+  //padding: 30px 0;
+}

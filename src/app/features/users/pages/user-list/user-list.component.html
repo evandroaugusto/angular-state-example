@@ -1,0 +1,25 @@
+<h2 class="title">USUÁRIOS</h2>
+
+<div *ngIf="users$|async as users;else loading" class="users">
+  <div *ngFor="let user of users" class="user user--card">
+    <div class="user-info">
+      <h3 class="user-name">{{user.name.firstname + ' ' + user.name.lastname}}</h3>
+      {{user.email}} <br />
+      {{user.address.city}} <br />
+      {{user.phone}}
+    </div>
+
+    <button class="cta-button" [routerLink]="'/usuarios/detalhes/' + user.id">
+      VER DETALHES
+    </button>
+  </div>
+</div>
+
+<br />
+<br />
+
+<ng-template #loading>
+  <div class="loading-spinner">
+    Carregando...
+  </div>
+</ng-template>

@@ -1,0 +1,23 @@
+<div class="product-item" *ngIf="product">
+  <div class="image">
+    <img [src]="product.image" />
+  </div>
+
+  <div class="content">
+    <h3>{{ product.title }}</h3>
+    <div class="cta">
+      <button
+        class="btn btn-detail"
+        [routerLink]="'/produtos/detalhes/' + product.id"
+      >
+        VER DETALHES
+      </button>
+      <button
+        class="btn btn-edit"
+        [routerLink]="'/produtos/detalhes/' + product.id + '/edit'"
+      >
+        EDITAR
+      </button>
+    </div>
+  </div>
+</div>

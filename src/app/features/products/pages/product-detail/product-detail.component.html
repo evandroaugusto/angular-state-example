@@ -1,0 +1,54 @@
+
+<div id="product-detail">
+  <div *ngIf="product$|async as product; else loading">
+    <section class="product-section">
+        <div class="details">
+          <div class="content">
+            <h2 class="description">{{product.title}}</h2>
+
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nisi lacus, molestie hendrerit dui pharetra, 
+              placerat porta sapien. Integer ultrices, dui a blandit ultrices, lectus odio ultricies turpis, ac blandit mi nisi id libero. 
+              Pellentesque volutpat, ante ac blandit vehicula, sem dui blandit metus, sit amet egestas tortor lacus sit amet arcu. 
+              Nunc a ligula mollis, lacinia nibh porta, fermentum dolor. Quisque sed tortor posuere, vulputate lacus ut, dapibus sem. 
+              In et sem lobortis, volutpat est ut, luctus ligula. Nam quis dolor tempus, pellentesque arcu quis, sollicitudin nunc. 
+              Nullam mollis facilisis massa, vel dapibus felis cursus eu. Praesent euismod pulvinar nibh ut tristique. 
+              Etiam sit amet est eleifend, blandit dolor et, ultricies velit. Quisque non lorem ornare, commodo nibh ac, blandit orci. 
+              Fusce nec fringilla erat. 
+              Pellentesque tincidunt odio eu eros congue, elementum consectetur orci vulputate. Duis quis neque odio.</p>
+
+            <p class="description">
+                Quisque sed tortor posuere, vulputate lacus ut, dapibus sem. 
+              In et sem lobortis, volutpat est ut, luctus ligula. Nam quis dolor tempus, pellentesque arcu quis, sollicitudin nunc. 
+              Nullam mollis facilisis massa, vel dapibus felis cursus eu. Praesent euismod pulvinar nibh ut tristique. 
+              Etiam sit amet est eleifend, blandit dolor et, ultricies velit. Quisque non lorem ornare, commodo nibh ac, blandit orci. 
+              Fusce nec fringilla erat. 
+              Pellentesque tincidunt odio eu eros congue, elementum consectetur orci vulputate. Duis quis neque odio.
+              </p>
+          </div>
+
+          <img [src]="product.image" />
+        </div>
+    </section>
+
+    <section class="product-section">
+      <h1 class="title">Descrição técnica</h1>
+        <p class="description">
+          Quisque sed tortor posuere, vulputate lacus ut, dapibus sem. 
+        In et sem lobortis, volutpat est ut, luctus ligula. Nam quis dolor tempus, pellentesque arcu quis, sollicitudin nunc. 
+        Nullam mollis facilisis massa, vel dapibus felis cursus eu. Praesent euismod pulvinar nibh ut tristique. 
+        Etiam sit amet est eleifend, blandit dolor et, ultricies velit. Quisque non lorem ornare, commodo nibh ac, blandit orci. 
+        Fusce nec fringilla erat. 
+        Pellentesque tincidunt odio eu eros congue, elementum consectetur orci vulputate. Duis quis neque odio.
+        </p>
+    </section>
+
+    <button class="btn-cancel" routerLink="/produtos">
+      Voltar
+    </button>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading">Carregando...</div>
+  </ng-template>
+  <br /><br />
+</div>

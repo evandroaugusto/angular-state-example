@@ -1,0 +1,39 @@
+<div id="product-list" class="main-col">
+  <!-- HEADER -->
+  <section class="products-section">
+    <h1 class="title">Produtos</h1>
+    <p class="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nisi
+      lacus, molestie hendrerit dui pharetra, placerat porta sapien. Integer
+      ultrices, dui a blandit ultrices, lectus odio ultricies turpis, ac blandit
+      mi nisi id libero. Pellentesque volutpat, ante ac blandit vehicula, sem
+      dui blandit metus, sit amet egestas tortor lacus sit amet arcu. Nunc a
+      ligula mollis, lacinia nibh porta, fermentum dolor. Quisque sed tortor
+      posuere, vulputate lacus ut, dapibus sem. In et sem lobortis, volutpat est
+      ut, luctus ligula. Nam quis dolor tempus, pellentesque arcu quis,
+      sollicitudin nunc. Nullam mollis facilisis massa, vel dapibus felis cursus
+      eu. Praesent euismod pulvinar nibh ut tristique. Etiam sit amet est
+      eleifend, blandit dolor et, ultricies velit. Quisque non lorem ornare,
+      commodo nibh ac, blandit orci. Fusce nec fringilla erat. Pellentesque
+      tincidunt odio eu eros congue, elementum consectetur orci vulputate. Duis
+      quis neque odio.
+    </p>
+  </section>
+  <!-- /HEADER -->
+
+  <!-- GRID: PRODUCTS -->
+  <section
+    *ngIf="products$ | async as products; else loading"
+    class="grid-products"
+  >
+    <app-product-item
+      [product]="product"
+      *ngFor="let product of products"
+    ></app-product-item>
+  </section>
+  <!-- /GRID: PRODUCTS -->
+
+  <ng-template #loading>
+    <div class="loading">Carregando...</div>
+  </ng-template>
+</div>
