@@ -14,15 +14,13 @@ const INITIAL_STATE: ProductsState = {
   selectedProducts: []
 };
 
-const STORE_KEY = "PRODUCTS_STORE"
-
 @Injectable()
 export class ProductsStore {
   private _state: BehaviorSubject<ProductsState>;
   state$: Observable<ProductsState>;
 
   constructor() {
-    const cachedStore = this.getStorage() || INITIAL_STATE;
+    const cachedStore = INITIAL_STATE;
 
     this._state = new BehaviorSubject(cachedStore);
     this.state$ = this._state.asObservable();
@@ -59,14 +57,5 @@ export class ProductsStore {
 
   private setState(newState: ProductsState) {
     this._state.next(newState);
-    this.setStorage(newState);
-  }
-
-  private setStorage(state: ProductsState) {
-    localStorage.setItem(STORE_KEY, JSON.stringify(this.state));
-  }
-
-  private getStorage() {
-    return JSON.parse(localStorage.getItem(STORE_KEY) || 'null');
-  }
+  } 
 }
